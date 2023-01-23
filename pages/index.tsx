@@ -2,8 +2,14 @@ import Headline from "@/components/Headline";
 import TopArticle from "@/components/TopArticle";
 import Separator from "@/components/Separator";
 import CategorySection from "@/components/CategorySection";
+import { useQuery } from "react-query";
+import { getTopArticles } from "@/api";
 
 export default function Home() {
+  const { data, status } = useQuery("topArticles", getTopArticles);
+
+  console.log(data);
+
   return (
     <>
       <main className="relative h-[192vh]">

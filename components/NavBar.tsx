@@ -13,7 +13,9 @@ const NavBar = () => {
           <Link href="/">entertainment</Link>
           <Link href="/">politics</Link>
         </nav>
-        <Image src={TransparentLogo} alt="logo" className="w-44" />
+        <Link href="/">
+          <Image src={TransparentLogo} alt="logo" className="w-44" />
+        </Link>
         <nav className="flex uppercase gap-x-5">
           <Link href="/">science</Link>
           <Link href="/">technology</Link>
