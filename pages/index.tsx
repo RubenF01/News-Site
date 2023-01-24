@@ -7,12 +7,12 @@ import { categories } from "@/utils";
 import useCategoryQuery from "@/hooks/useCategoryQuery";
 
 export default function Home() {
-  const { data, status } = useCategoryQuery("top");
+  const { data } = useCategoryQuery("top");
 
   return (
     <>
       <main className="relative h-[192vh]">
-        <Headline headLineArticle={data?.results[0]} />
+        <Headline headlineArticle={data?.results[0]} />
       </main>
       <section className="relative z-40 -mt-[100vh] bg-blue-500 px-16 pt-14">
         <div className="grid grid-cols-4 -space-x-10 bg-yellow-600 mb-36">

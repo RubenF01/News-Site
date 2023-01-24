@@ -7,13 +7,10 @@ export const useCategoryQuery = (category: string): CategoryQueryResult => {
     category,
     () => getArticlesByCategory(category),
     {
-      // TODO CHANGE TO CACHED VALUE
-      // initialData: { results: [] },
       staleTime: 60 * 60 * 1000,
+      cacheTime: 60 * 60 * 1000,
     }
   );
-
-  console.log(data);
 
   return { data, status };
 };
