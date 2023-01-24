@@ -11,11 +11,16 @@ interface Props {
 }
 
 const CategorySection = ({ category, index, categoryArray }: Props) => {
+  const { data, status } = useCategoryQuery(category);
+  const mainArticle = data?.results[0];
+
   return (
     <>
       <div className="flex justify-between pt-5 mb-36">
         <div className="flex flex-col max-w-sm gap-y-4">
-          <h1 className="font-bold cursor-default text-7xl">Investigations</h1>
+          <h1 className="font-bold capitalize cursor-default text-7xl">
+            {category}
+          </h1>
           <Link
             href="/"
             className="flex uppercase w-min whitespace-nowrap gap-x-2"
@@ -25,14 +30,8 @@ const CategorySection = ({ category, index, categoryArray }: Props) => {
         </div>
         <div className="flex gap-x-8">
           <div className="max-w-[280px] flex flex-col justify-between">
-            <h1 className="text-xl font-bold">
-              Suspects in alleged Markham illegal casino mansion linked to B.C.
-              casino suspects
-            </h1>
-            <p className="text-lg font-light">
-              Alleged criminal activities in Richmond, B.C., and Markham,
-              Ontario have come into focus in recent weeks.
-            </p>
+            <h1 className="text-xl font-bold">{mainArticle?.title}</h1>
+            <p className="text-lg font-light">{mainArticle?.description}</p>
             <Link
               href="/"
               className="flex text-sm font-medium uppercase w-min gap-x-2 whitespace-nowrap"
@@ -50,7 +49,7 @@ const CategorySection = ({ category, index, categoryArray }: Props) => {
           </div>
         </div>
       </div>
-      <Separator />
+      {index !== categoryArray.length - 1 && <Separator />}
     </>
   );
 };
