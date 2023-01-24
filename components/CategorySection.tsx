@@ -2,8 +2,15 @@ import Separator from "./Separator";
 import Link from "next/link";
 import LinkIcon from "../public/icons/link-icon.svg";
 import Image from "next/image";
+import useCategoryQuery from "@/hooks/useCategoryQuery";
 
-const CategorySection = () => {
+interface Props {
+  category: string;
+  index: number;
+  categoryArray: string[];
+}
+
+const CategorySection = ({ category, index, categoryArray }: Props) => {
   return (
     <>
       <div className="flex justify-between pt-5 mb-36">
