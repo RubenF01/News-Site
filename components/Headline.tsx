@@ -1,5 +1,6 @@
 import type { Article } from "@/types";
 import Dot from "../public/icons/circle-solid.svg";
+import { formatDate } from "@/utils";
 
 interface Props {
   headlineArticle: Article;
@@ -18,7 +19,9 @@ const Headline = ({ headlineArticle }: Props) => {
             <p className="whitespace-nowrap">{headlineArticle?.creator[0]}</p>
             <Dot className="w-1 fill-white" />
             {/* <p className="whitespace-nowrap">September 23, 2021</p> */}
-            <p className="whitespace-nowrap">{headlineArticle?.pubDate}</p>
+            <p className="whitespace-nowrap">
+              {formatDate(headlineArticle?.pubDate)}
+            </p>
           </div>
         </div>
         <div className="flex flex-col gap-y-4">

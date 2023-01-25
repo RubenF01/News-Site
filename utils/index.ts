@@ -1,3 +1,5 @@
+import { format } from "date-fns";
+
 export const categories = [
   "business",
   "entertainment",
@@ -19,4 +21,12 @@ export const truncateString = (str: string) => {
     }
   }
   return str;
+};
+
+export const formatDate = (date: string) => {
+  if (!date) return;
+  const oldDate = new Date(date);
+  const formattedDate = format(oldDate, "MMMM dd, yyyy");
+
+  return formattedDate;
 };
