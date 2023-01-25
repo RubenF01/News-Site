@@ -3,6 +3,7 @@ import Link from "next/link";
 import LinkIcon from "../public/icons/link-icon.svg";
 import Image from "next/image";
 import useCategoryQuery from "@/hooks/useCategoryQuery";
+import { truncateString } from "@/utils";
 
 interface Props {
   category: string;
@@ -31,7 +32,9 @@ const CategorySection = ({ category, index, categoryArray }: Props) => {
         <div className="flex gap-x-8">
           <div className="max-w-[280px] flex flex-col justify-between">
             <h1 className="text-xl font-bold">{mainArticle?.title}</h1>
-            <p className="text-lg font-light">{mainArticle?.description}</p>
+            <p className="text-lg font-light">
+              {truncateString(mainArticle?.description)}
+            </p>
             <Link
               href="/"
               className="flex text-sm font-medium uppercase w-min gap-x-2 whitespace-nowrap"
