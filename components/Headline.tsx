@@ -13,13 +13,18 @@ const Headline = ({ headlineArticle }: Props) => {
       <div className="w-full h-full bg-black/50" />
       <div className="absolute flex flex-col text-white bottom-10 left-16 gap-y-4">
         <div className="flex items-center text-xs cursor-default gap-x-8">
-          <div className="p-2 bg-red-500">
-            <p className="uppercase">{headlineArticle?.category[0]}</p>
-          </div>
+          {headlineArticle && headlineArticle.category && (
+            <div className="p-2 bg-red-500">
+              <p className="uppercase">{headlineArticle?.category[0]}</p>
+            </div>
+          )}
           <div className="flex gap-x-3">
-            <p className="whitespace-nowrap">{headlineArticle?.creator[0]}</p>
-            <Dot className="w-1 fill-white" />
-            {/* <p className="whitespace-nowrap">September 23, 2021</p> */}
+            {headlineArticle && headlineArticle.creator && (
+              <p className="whitespace-nowrap">{headlineArticle?.creator[0]}</p>
+            )}
+            {headlineArticle && headlineArticle.creator && (
+              <Dot className="w-1 fill-white" />
+            )}
             <p className="whitespace-nowrap">
               {formatDate(headlineArticle?.pubDate)}
             </p>
