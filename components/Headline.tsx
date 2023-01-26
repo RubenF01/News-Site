@@ -1,6 +1,7 @@
 import type { Article } from "@/types";
 import Dot from "../public/icons/circle-solid.svg";
 import { formatDate } from "@/utils";
+import Link from "next/link";
 
 interface Props {
   headlineArticle: Article;
@@ -25,9 +26,11 @@ const Headline = ({ headlineArticle }: Props) => {
           </div>
         </div>
         <div className="flex flex-col gap-y-4">
-          <h1 className="max-w-3xl text-4xl cursor-pointer">
-            {headlineArticle?.title}
-          </h1>
+          <Link href={headlineArticle?.link || "#"} target="_blank">
+            <h1 className="max-w-3xl text-4xl cursor-pointer">
+              {headlineArticle?.title}
+            </h1>
+          </Link>
           <p className="max-w-[600px]">{headlineArticle?.description}</p>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import type { Article } from "@/types";
 import { truncateString } from "@/utils";
+import Link from "next/link";
 
 interface Props {
   article: Article;
@@ -11,7 +12,9 @@ const TopArticle = ({ article }: Props) => {
       <div className="p-2 text-xs text-white uppercase w-min bg-slate-600">
         <p>{article?.category[0]}</p>
       </div>
-      <h1 className="text-xl font-bold">{article?.title}</h1>
+      <Link href={article?.link || "#"} target="_blank">
+        <h1 className="text-xl font-bold">{article?.title}</h1>
+      </Link>
       <p className="font-light">{truncateString(article?.description)}</p>
     </div>
   );

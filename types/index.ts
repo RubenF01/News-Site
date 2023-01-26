@@ -1,7 +1,7 @@
 export interface Article {
   description: string;
   title: string;
-  url: string;
+  link: string;
   category: string[];
   image_url: string;
   creator: string[];

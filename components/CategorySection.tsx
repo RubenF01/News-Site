@@ -23,7 +23,7 @@ const CategorySection = ({ category, index, categoryArray }: Props) => {
             {category}
           </h1>
           <Link
-            href="/"
+            href={`/category/${category}`}
             className="flex uppercase w-min whitespace-nowrap gap-x-2"
           >
             see all <LinkIcon className="w-3" />
@@ -36,7 +36,8 @@ const CategorySection = ({ category, index, categoryArray }: Props) => {
               {truncateString(mainArticle?.description)}
             </p>
             <Link
-              href="/"
+              href={mainArticle?.link || "#"}
+              target="_blank"
               className="flex text-sm font-medium uppercase w-min gap-x-2 whitespace-nowrap"
             >
               read article <LinkIcon className="w-3" />
