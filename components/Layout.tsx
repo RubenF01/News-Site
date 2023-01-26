@@ -1,5 +1,5 @@
 import Head from "next/head";
-import NavBar from "./NavBar";
+import NavBar from "./nav/NavBar";
 import { useIsFetching } from "react-query";
 import LoadingLayout from "./loading/LoadingLayout";
 import LoadingSpinner from "./loading/LoadingSpinner";
