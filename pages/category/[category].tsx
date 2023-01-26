@@ -1,9 +1,10 @@
 import { useRouter } from "next/router";
-import { useQuery } from "react-query";
+import useCategoryQuery from "@/hooks/useCategoryQuery";
 
 const CategoryPage = () => {
   const router = useRouter();
   const { category } = router.query;
+  const { data } = useCategoryQuery(category as string);
 
   return (
     <div>
