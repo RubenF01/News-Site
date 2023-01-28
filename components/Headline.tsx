@@ -8,14 +8,15 @@ interface Props {
 }
 
 const Headline = ({ headlineArticle }: Props) => {
-  console.log(headlineArticle);
   return (
     <div className="sticky top-0 h-[92vh] bg-red-500">
       <img
         src={
-          headlineArticle.image_url ? headlineArticle.image_url : randomImgSrc()
+          headlineArticle && headlineArticle.image_url
+            ? headlineArticle.image_url
+            : randomImgSrc()
         }
-        alt={headlineArticle.title}
+        alt={headlineArticle?.title}
         className="absolute inset-0 object-cover w-full h-full"
       />
       <div className="w-full h-full bg-black/50" />

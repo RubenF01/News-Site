@@ -14,8 +14,6 @@ const CategorySection = ({ category, index, categoryArray }: Props) => {
   const { data } = useCategoryQuery(category);
   const mainArticle = data?.results[0];
 
-  console.log(mainArticle);
-
   return (
     <>
       <div className="flex justify-between pt-5 mb-36">
@@ -47,7 +45,9 @@ const CategorySection = ({ category, index, categoryArray }: Props) => {
           <div className="h-64 w-96">
             <img
               src={
-                mainArticle?.image_url ? mainArticle.image_url : randomImgSrc()
+                mainArticle && mainArticle.image_url
+                  ? mainArticle.image_url
+                  : randomImgSrc()
               }
               alt="image"
               className="object-cover w-full h-full"
