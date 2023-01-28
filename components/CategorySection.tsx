@@ -1,9 +1,8 @@
 import Separator from "./Separator";
 import Link from "next/link";
 import LinkIcon from "../public/icons/link-icon.svg";
-import Image from "next/image";
 import useCategoryQuery from "@/hooks/useCategoryQuery";
-import { truncateString } from "@/utils";
+import { truncateString, randomImgSrc } from "@/utils";
 
 interface Props {
   category: string;
@@ -12,8 +11,10 @@ interface Props {
 }
 
 const CategorySection = ({ category, index, categoryArray }: Props) => {
-  const { data, status } = useCategoryQuery(category);
+  const { data } = useCategoryQuery(category);
   const mainArticle = data?.results[0];
+
+  console.log(mainArticle);
 
   return (
     <>
@@ -43,12 +44,13 @@ const CategorySection = ({ category, index, categoryArray }: Props) => {
               read article <LinkIcon className="w-3" />
             </Link>
           </div>
-          <div className="relative h-64 w-96">
-            <Image
-              src="/test-image.png"
+          <div className="h-64 w-96">
+            <img
+              src={
+                mainArticle?.image_url ? mainArticle.image_url : randomImgSrc()
+              }
               alt="image"
-              fill
-              style={{ objectFit: "cover" }}
+              className="object-cover w-full h-full"
             />
           </div>
         </div>

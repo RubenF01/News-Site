@@ -1,6 +1,6 @@
 import type { Article } from "@/types";
 import Dot from "../public/icons/circle-solid.svg";
-import { formatDate } from "@/utils";
+import { formatDate, randomImgSrc } from "@/utils";
 import Link from "next/link";
 
 interface Props {
@@ -8,8 +8,16 @@ interface Props {
 }
 
 const Headline = ({ headlineArticle }: Props) => {
+  console.log(headlineArticle);
   return (
     <div className="sticky top-0 h-[92vh] bg-red-500">
+      <img
+        src={
+          headlineArticle.image_url ? headlineArticle.image_url : randomImgSrc()
+        }
+        alt={headlineArticle.title}
+        className="absolute inset-0 object-cover w-full h-full"
+      />
       <div className="w-full h-full bg-black/50" />
       <div className="absolute flex flex-col text-white bottom-10 left-16 gap-y-4">
         <div className="flex items-center text-xs cursor-default gap-x-8">

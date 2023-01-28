@@ -30,7 +30,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="relative flex items-center justify-center py-3">
+    <div className="relative flex items-center justify-center py-3 bg-butterIcing">
       <SearchIcon className="absolute top-0 bottom-0 w-5 pt-2 my-auto left-10" />
       <div className="flex items-center gap-x-5">
         <nav className="flex uppercase gap-x-5">

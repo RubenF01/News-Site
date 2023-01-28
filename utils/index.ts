@@ -43,3 +43,13 @@ export const formatDate = (date: string) => {
 
   return formattedDate;
 };
+
+const placeholderImgSrc = [
+  "/article_placeholder.png",
+  "/article_placeholder2.png",
+];
+
+export const randomImgSrc = () => {
+  const randomIndex = Math.floor(Math.random() * placeholderImgSrc.length);
+  return placeholderImgSrc[randomIndex];
+};
