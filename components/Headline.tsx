@@ -23,7 +23,7 @@ const Headline = ({ headlineArticle }: Props) => {
       <div className="absolute flex flex-col text-white bottom-10 left-16 gap-y-4">
         <div className="flex items-center text-xs cursor-default gap-x-8">
           {headlineArticle && headlineArticle.category && (
-            <div className="p-2 bg-red-500">
+            <div className="p-2 bg-[#FFC107]">
               <p className="uppercase">{headlineArticle?.category[0]}</p>
             </div>
           )}

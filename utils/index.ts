@@ -1,12 +1,12 @@
 import { format } from "date-fns";
 
 export const categories = [
-  "business",
-  "entertainment",
-  "politics",
-  "science",
-  "technology",
-  "world",
+  { label: "business", color: "#607D8B" },
+  { label: "entertainment", color: "##F44336" },
+  { label: "politics", color: "#3F51B5" },
+  { label: "science", color: "#4CAF50" },
+  { label: "technology", color: "#9C27B0" },
+  { label: "world", color: "#2196F3" },
 ];
 
 export const countries = [

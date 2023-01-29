@@ -3,7 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 interface Props {
-  category: string;
+  category: {
+    label: string;
+  };
   currentRoute: string;
 }
 
@@ -17,9 +19,9 @@ const NavBarItem = ({ category, currentRoute }: Props) => {
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      {category}
+      {category.label}
       <AnimatePresence>
-        {(currentRoute === category || isHover) && (
+        {(currentRoute === category.label || isHover) && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

@@ -3,15 +3,16 @@ import Link from "next/link";
 import LinkIcon from "../public/icons/link-icon.svg";
 import useCategoryQuery from "@/hooks/useCategoryQuery";
 import { truncateString, randomImgSrc } from "@/utils";
+import type { Category } from "@/types";
 
 interface Props {
-  category: string;
+  category: Category;
   index: number;
-  categoryArray: string[];
+  categoryArray: Category[];
 }
 
 const CategorySection = ({ category, index, categoryArray }: Props) => {
-  const { data } = useCategoryQuery(category);
+  const { data } = useCategoryQuery(category.label);
   const mainArticle = data?.results[0];
 
   return (
@@ -19,7 +20,7 @@ const CategorySection = ({ category, index, categoryArray }: Props) => {
       <div className="flex justify-between pt-5 mb-36">
         <div className="flex flex-col max-w-sm gap-y-4">
           <h1 className="font-bold capitalize cursor-default text-7xl">
-            {category}
+            {category.label}
           </h1>
           <Link
             href={`/category/${category}`}

@@ -12,3 +12,8 @@ export interface CategoryQueryResult {
   data: { results: Article[] };
   status: "idle" | "error" | "loading" | "success";
 }
+
+export interface Category {
+  label: string;
+  color: string;
+}

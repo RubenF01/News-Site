@@ -10,7 +10,7 @@ const TopArticle = ({ article }: Props) => {
   return (
     <div className="flex flex-col max-w-xs gap-y-3">
       {article && article.category && (
-        <div className="p-2 text-xs text-white uppercase w-min bg-slate-600">
+        <div className="p-2 text-xs text-white uppercase w-min bg-[#FFC107]">
           <p>{article?.category[0]}</p>
         </div>
       )}
