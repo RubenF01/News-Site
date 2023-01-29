@@ -17,7 +17,7 @@ const CategorySection = ({ category, index, categoryArray }: Props) => {
 
   return (
     <div className={`${!data?.results.length && "hidden"}`}>
-      <div className="flex justify-between pt-5 mb-36">
+      <div className="flex justify-between pt-5 pb-36">
         <div className="flex flex-col max-w-sm gap-y-4">
           <h1 className="font-bold capitalize cursor-default text-7xl">
             {category.label}

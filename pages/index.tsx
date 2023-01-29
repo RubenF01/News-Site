@@ -5,6 +5,7 @@ import Separator from "@/components/Separator";
 import CategorySection from "@/components/CategorySection";
 import { categories } from "@/utils";
 import useCategoryQuery from "@/hooks/useCategoryQuery";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const { data } = useCategoryQuery("top");
@@ -15,7 +16,7 @@ export default function Home() {
         <Headline headlineArticle={data?.results[0]} />
       </main>
       <section className="relative z-40 -mt-[100vh] bg-butterIcing px-16 pt-14">
-        <div className="grid grid-cols-4 -space-x-10 mb-36">
+        <div className="grid grid-cols-4 -space-x-10 pb-36">
           {data?.results.slice(1, 5).map((article: Article, index: number) => (
             <TopArticle key={index} article={article} />
           ))}
