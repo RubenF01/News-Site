@@ -9,7 +9,7 @@ interface Props {
 
 const Headline = ({ headlineArticle }: Props) => {
   return (
-    <div className="sticky top-0 h-[92vh] bg-red-500">
+    <div className="sticky top-0 h-[92vh]">
       <img
         src={
           headlineArticle && headlineArticle.image_url
@@ -19,7 +19,7 @@ const Headline = ({ headlineArticle }: Props) => {
         alt={headlineArticle?.title}
         className="absolute inset-0 object-cover w-full h-full"
       />
-      <div className="w-full h-full bg-black/50" />
+      <div className="absolute inset-0 bg-black/50" />
       <div className="absolute flex flex-col text-white bottom-10 left-16 gap-y-4">
         <div className="flex items-center text-xs cursor-default gap-x-8">
           {headlineArticle && headlineArticle.category && (
