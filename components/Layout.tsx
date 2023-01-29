@@ -22,7 +22,7 @@ const Layout = ({ children }: Props) => {
       <NavBar />
       {children}
       <Footer />
-      {isFetching && <LoadingLayout />}
+      {isFetching !== 0 && <LoadingLayout />}
     </div>
   );
 };
