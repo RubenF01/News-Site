@@ -8,7 +8,7 @@ const CategoryPage = () => {
   const { data } = useCategoryQuery(category as string);
 
   return (
-    <div className="px-16 pt-14">
+    <div className="min-h-screen px-16 pt-14">
       <h1 className="font-bold capitalize cursor-default text-7xl">
         {category}
       </h1>

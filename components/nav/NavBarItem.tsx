@@ -1,11 +1,10 @@
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import type { Category } from "@/types";
 
 interface Props {
-  category: {
-    label: string;
-  };
+  category: Category;
   currentRoute: string;
 }
 
@@ -14,7 +13,7 @@ const NavBarItem = ({ category, currentRoute }: Props) => {
 
   return (
     <Link
-      href={`/category/${category}`}
+      href={`/category/${category.label}`}
       className="relative"
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
