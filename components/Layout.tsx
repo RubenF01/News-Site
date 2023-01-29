@@ -2,7 +2,7 @@ import Head from "next/head";
 import NavBar from "./nav/NavBar";
 import { useIsFetching } from "react-query";
 import LoadingLayout from "./loading/LoadingLayout";
-import LoadingSpinner from "./loading/LoadingSpinner";
+import Footer from "./Footer";
 
 interface Props {
   children: React.ReactNode;
@@ -21,6 +21,7 @@ const Layout = ({ children }: Props) => {
       </Head>
       <NavBar />
       {children}
+      <Footer />
       {isFetching && <LoadingLayout />}
     </div>
   );
