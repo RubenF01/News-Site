@@ -5,13 +5,17 @@ import Separator from "@/components/Separator";
 import CategorySection from "@/components/CategorySection";
 import { categories } from "@/utils";
 import useCategoryQuery from "@/hooks/useCategoryQuery";
-import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const { data } = useCategoryQuery("top");
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+    >
       <main className="relative h-[192vh]">
         <Headline headlineArticle={data?.results[0]} />
       </main>
@@ -31,6 +35,6 @@ export default function Home() {
           />
         ))}
       </section>
-    </>
+    </motion.div>
   );
 }

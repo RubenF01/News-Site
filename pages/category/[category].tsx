@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import useCategoryQuery from "@/hooks/useCategoryQuery";
+import { motion } from "framer-motion";
 import Separator from "@/components/Separator";
 
 const CategoryPage = () => {
@@ -8,7 +9,12 @@ const CategoryPage = () => {
   const { data } = useCategoryQuery(category as string);
 
   return (
-    <div className="min-h-screen px-16 pt-14">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+      className="min-h-screen px-16 pt-14"
+    >
       <h1 className="font-bold capitalize cursor-default text-7xl">
         {category}
       </h1>
@@ -17,7 +23,7 @@ const CategoryPage = () => {
           <div className="bg-red-500 h-44 w-44"></div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

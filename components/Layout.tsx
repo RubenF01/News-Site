@@ -3,6 +3,7 @@ import NavBar from "./nav/NavBar";
 import { useIsFetching } from "react-query";
 import LoadingLayout from "./loading/LoadingLayout";
 import Footer from "./Footer";
+import { AnimatePresence } from "framer-motion";
 
 interface Props {
   children: React.ReactNode;
@@ -20,7 +21,7 @@ const Layout = ({ children }: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar />
-      {children}
+      <AnimatePresence mode="wait">{children}</AnimatePresence>
       <Footer />
       {isFetching !== 0 && <LoadingLayout />}
     </div>

@@ -4,6 +4,7 @@ import LinkIcon from "../public/icons/link-icon.svg";
 import useCategoryQuery from "@/hooks/useCategoryQuery";
 import { truncateString, randomImgSrc } from "@/utils";
 import type { Category } from "@/types";
+import { motion } from "framer-motion";
 
 interface Props {
   category: Category;
@@ -16,7 +17,13 @@ const CategorySection = ({ category, index, categoryArray }: Props) => {
   const mainArticle = data?.results[0];
 
   return (
-    <div className={`${!data?.results.length && "hidden"}`}>
+    <motion.div
+      transition={{ delay: 0.3, duration: 0.5 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      className={`${!data?.results.length && "hidden"}`}
+    >
       <div className="flex justify-between pt-5 pb-36">
         <div className="flex flex-col max-w-sm gap-y-4">
           <h1 className="font-bold capitalize cursor-default text-7xl">
@@ -57,7 +64,7 @@ const CategorySection = ({ category, index, categoryArray }: Props) => {
         </div>
       </div>
       {index !== categoryArray.length - 1 && <Separator />}
-    </div>
+    </motion.div>
   );
 };
 
