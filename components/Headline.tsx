@@ -2,6 +2,7 @@ import type { Article } from "@/types";
 import Dot from "../public/icons/circle-solid.svg";
 import { formatDate, randomImgSrc } from "@/utils";
 import Link from "next/link";
+import { truncateString } from "@/utils";
 
 interface Props {
   headlineArticle: Article;
@@ -45,7 +46,9 @@ const Headline = ({ headlineArticle }: Props) => {
               {headlineArticle?.title}
             </h1>
           </Link>
-          <p className="max-w-[600px]">{headlineArticle?.description}</p>
+          <p className="max-w-[600px]">
+            {truncateString(headlineArticle?.description, "long")}
+          </p>
         </div>
       </div>
     </div>

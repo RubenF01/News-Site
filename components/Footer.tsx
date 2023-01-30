@@ -2,6 +2,7 @@ import WhiteLogo from "../public/ASAP NEWS-logos_white.png";
 import Image from "next/image";
 import { categories } from "@/utils";
 import Link from "next/link";
+import Heart from "../public/icons/heart-solid.svg";
 
 const Footer = () => {
   return (
@@ -20,19 +21,31 @@ const Footer = () => {
         </div>
         <p>2023 ASAP News - All Rights Reserved</p>
       </div>
-      <div>
-        <h3 className="pb-2 font-bold">Categories</h3>
-        <ul className="flex flex-col">
-          {categories.map((category, index) => (
-            <Link
-              href={`/category/${category.label}`}
-              key={index}
-              className="capitalize cursor-pointer"
-            >
-              {category.label}
-            </Link>
-          ))}
-        </ul>
+      <div className="flex flex-col justify-between">
+        <div>
+          <h3 className="pb-2 font-bold">Categories</h3>
+          <ul className="flex flex-col">
+            {categories.map((category, index) => (
+              <Link
+                href={`/category/${category.label}`}
+                key={index}
+                className="capitalize cursor-pointer"
+              >
+                {category.label}
+              </Link>
+            ))}
+          </ul>
+        </div>
+        <p className="flex text-white gap-x-1">
+          Created with <Heart className="w-4 fill-red-500" /> by{" "}
+          <Link
+            href="https://rubenfrias.com/"
+            target="_blank"
+            className="block"
+          >
+            Rubén
+          </Link>
+        </p>
       </div>
     </div>
   );

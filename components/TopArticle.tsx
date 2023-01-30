@@ -24,7 +24,9 @@ const TopArticle = ({ article }: Props) => {
       <Link href={article?.link || "#"} target="_blank">
         <h1 className="text-xl font-bold">{article?.title}</h1>
       </Link>
-      <p className="font-light">{truncateString(article?.description)}</p>
+      <p className="font-light">
+        {truncateString(article?.description, "short")}
+      </p>
     </motion.div>
   );
 };

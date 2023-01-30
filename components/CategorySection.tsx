@@ -30,7 +30,7 @@ const CategorySection = ({ category, index, categoryArray }: Props) => {
             {category.label}
           </h1>
           <Link
-            href={`/category/${category}`}
+            href={`/category/${category.label}`}
             className="flex uppercase w-min whitespace-nowrap gap-x-2"
           >
             see all <LinkIcon className="w-3" />
@@ -40,7 +40,7 @@ const CategorySection = ({ category, index, categoryArray }: Props) => {
           <div className="max-w-[280px] flex flex-col justify-between">
             <h1 className="text-xl font-bold">{mainArticle?.title}</h1>
             <p className="text-lg font-light">
-              {truncateString(mainArticle?.description)}
+              {truncateString(mainArticle?.description, "short")}
             </p>
             <Link
               href={mainArticle?.link || "#"}
@@ -58,7 +58,7 @@ const CategorySection = ({ category, index, categoryArray }: Props) => {
                   : randomImgSrc()
               }
               alt="image"
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full rounded-lg border-[1px] border-black"
             />
           </div>
         </div>

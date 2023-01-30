@@ -22,18 +22,32 @@ export const countries = [
   { label: "Venezuela", value: "ve" },
 ];
 
-export const truncateString = (str: string) => {
+export const truncateString = (str: string, length: "short" | "long") => {
   if (!str) return;
-  if (str.length > 140) {
-    str = str.substring(0, 140);
 
-    if (str.slice(-1) === ".") {
-      return str;
-    } else {
-      return str + "...";
+  if (length === "short") {
+    if (str.length > 140) {
+      str = str.substring(0, 140);
+
+      if (str.slice(-1) === ".") {
+        return str;
+      } else {
+        return str + "...";
+      }
     }
+    return str;
+  } else if (length === "long") {
+    if (str.length > 500) {
+      str = str.substring(0, 500);
+
+      if (str.slice(-1) === ".") {
+        return str;
+      } else {
+        return str + "...";
+      }
+    }
+    return str;
   }
-  return str;
 };
 
 export const formatDate = (date: string) => {
