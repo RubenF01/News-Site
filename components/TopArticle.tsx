@@ -14,7 +14,7 @@ const TopArticle = ({ article }: Props) => {
       initial={{ opacity: 0, y: 35 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="flex flex-col max-w-xs gap-y-3"
+      className="flex flex-col 2xl:max-w-xs gap-y-3"
     >
       {article && article.category && (
         <div className="p-2 text-xs text-white uppercase w-min bg-[#FFC107]">

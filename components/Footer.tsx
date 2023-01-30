@@ -6,10 +6,14 @@ import Heart from "../public/icons/heart-solid.svg";
 
 const Footer = () => {
   return (
-    <div className="flex justify-between w-full px-16 pt-10 pb-8 text-white bg-black h-80">
-      <div className="flex flex-col justify-between max-w-md">
+    <div className="relative flex flex-col justify-between w-full pt-10 pb-8 text-white bg-black 2xl:static px-7 2xl:px-16 2xl:flex-row min-h-80">
+      <div className="flex flex-col justify-between order-last pb-8 text-center 2xl:text-left 2xl:pb-0 2xl:max-w-md 2xl:order-first gap-y-3 2xl:gap-y-0">
         <div>
-          <Image src={WhiteLogo} alt="logo" className="-ml-2 w-44" />
+          <Image
+            src={WhiteLogo}
+            alt="logo"
+            className="mx-auto 2xl:-ml-2 w-44"
+          />
           <p>
             ASAP News provides innovative and essential investigative
             journalism, opinions, and analysis from some of the major news
@@ -19,12 +23,16 @@ const Footer = () => {
             </a>
           </p>
         </div>
-        <p>2023 ASAP News - All Rights Reserved</p>
+        <p className="text-center 2xl:text-left">
+          2023 ASAP News - All Rights Reserved
+        </p>
       </div>
-      <div className="flex flex-col justify-between">
+      <div className="flex flex-col items-center justify-between 2xl:items-start">
         <div>
-          <h3 className="pb-2 font-bold">Categories</h3>
-          <ul className="flex flex-col">
+          <h3 className="pb-2 text-xl font-bold text-center 2xl:text-left 2xl:text-base">
+            Categories
+          </h3>
+          <ul className="flex flex-col items-center pb-5 2xl:pb-0 2xl:items-start gap-y-2 2xl:gap-y-0">
             {categories.map((category, index) => (
               <Link
                 href={`/category/${category.label}`}
@@ -36,7 +44,7 @@ const Footer = () => {
             ))}
           </ul>
         </div>
-        <p className="flex text-white gap-x-1">
+        <p className="absolute flex text-white bottom-2 gap-x-1 2xl:static 2xl:pt-5">
           Created with <Heart className="w-4 fill-red-500" /> by{" "}
           <Link
             href="https://rubenfrias.com/"

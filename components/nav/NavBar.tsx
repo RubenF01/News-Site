@@ -33,7 +33,7 @@ const NavBar = () => {
     <div className="relative flex items-center justify-center py-3 bg-butterIcing">
       <SearchIcon className="absolute top-0 bottom-0 w-5 pt-2 my-auto left-10" />
       <div className="flex items-center gap-x-5">
-        <nav className="flex uppercase gap-x-5">
+        <nav className="hidden uppercase 2xl:flex gap-x-5">
           {categories.slice(0, 3).map((category, index) => (
             <NavBarItem
               category={category}
@@ -45,7 +45,7 @@ const NavBar = () => {
         <Link href="/">
           <Image src={TransparentLogo} alt="logo" className="w-44" />
         </Link>
-        <nav className="flex uppercase gap-x-5">
+        <nav className="hidden uppercase 2xl:flex gap-x-5">
           {categories.slice(3).map((category, index) => (
             <NavBarItem
               category={category}

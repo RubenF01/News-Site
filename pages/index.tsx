@@ -19,8 +19,8 @@ export default function Home() {
       <main className="relative h-[192vh]">
         <Headline headlineArticle={data?.results[0]} />
       </main>
-      <section className="relative z-40 -mt-[100vh] bg-butterIcing px-16 pt-14">
-        <div className="grid grid-cols-4 -space-x-10 pb-36">
+      <section className="relative z-40 -mt-[100vh] bg-butterIcing px-7 2xl:px-16 pt-14">
+        <div className="grid grid-cols-1 gap-y-10 2xl:gap-y-0 2xl:-space-x-10 2xl:grid-cols-4 pb-36">
           {data?.results.slice(1, 5).map((article: Article, index: number) => (
             <TopArticle key={index} article={article} />
           ))}

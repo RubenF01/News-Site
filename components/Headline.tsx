@@ -21,7 +21,7 @@ const Headline = ({ headlineArticle }: Props) => {
         className="absolute inset-0 object-cover w-full h-full"
       />
       <div className="absolute inset-0 bg-black/50" />
-      <div className="absolute flex flex-col text-white bottom-10 left-16 gap-y-4">
+      <div className="absolute flex flex-col text-white bottom-10 2xl:left-16 gap-y-4 px-7">
         <div className="flex items-center text-xs cursor-default gap-x-8">
           {headlineArticle && headlineArticle.category && (
             <div className="p-2 bg-[#FFC107]">
