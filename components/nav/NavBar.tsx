@@ -73,7 +73,10 @@ const NavBar = ({ setIsOpen }: Props) => {
           instanceId="country-select"
         />
       </div>
-      <HamburgerIcon className="absolute w-6 right-7" onClick={handleToggle} />
+      <HamburgerIcon
+        className="absolute w-6 right-7 2xl:hidden"
+        onClick={handleToggle}
+      />
     </div>
   );
 };
