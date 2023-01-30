@@ -6,12 +6,15 @@ import Footer from "./Footer";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import { categories } from "@/utils";
+import HamburgerMenu from "./HamburgerMenu";
+import { useState } from "react";
 
 interface Props {
   children: React.ReactNode;
 }
 
 const Layout = ({ children }: Props) => {
+  const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const { category } = router.query;
   const isFetching = useIsFetching();
@@ -30,9 +33,14 @@ const Layout = ({ children }: Props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NavBar />
+      <NavBar setIsOpen={setIsOpen} />
       <AnimatePresence mode="wait">{children}</AnimatePresence>
       <Footer />
+
+      <AnimatePresence>
+        {isOpen && <HamburgerMenu setIsOpen={setIsOpen} />}
+      </AnimatePresence>
+
       {isFetching !== 0 && <LoadingLayout />}
     </div>
   );

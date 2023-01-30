@@ -9,8 +9,13 @@ import NavBarItem from "./NavBarItem";
 import Select, { SingleValue } from "react-select";
 import { countries } from "@/utils";
 import CountryContext from "@/context/countryCountext";
+import HamburgerIcon from "../../public/icons/bars-solid.svg";
 
-const NavBar = () => {
+interface Props {
+  setIsOpen: (value: boolean) => void;
+}
+
+const NavBar = ({ setIsOpen }: Props) => {
   const router = useRouter();
   const [currentRoute, setCurrentRoute] = useState<string>();
   const { category } = router.query;
@@ -29,9 +34,13 @@ const NavBar = () => {
     selected && setCountry(selected.value);
   };
 
+  const handleToggle = () => {
+    setIsOpen(true);
+  };
+
   return (
     <div className="relative flex items-center justify-center py-3 bg-butterIcing">
-      <SearchIcon className="absolute top-0 bottom-0 w-5 pt-2 my-auto left-10" />
+      <SearchIcon className="absolute top-0 bottom-0 hidden w-5 pt-2 my-auto left-10 2xl:block" />
       <div className="flex items-center gap-x-5">
         <nav className="hidden uppercase 2xl:flex gap-x-5">
           {categories.slice(0, 3).map((category, index) => (
@@ -55,7 +64,7 @@ const NavBar = () => {
           ))}
         </nav>
       </div>
-      <div className="absolute top-0 bottom-0 my-auto right-10 w-min h-min">
+      <div className="absolute top-0 bottom-0 hidden my-auto right-10 w-min h-min 2xl:block">
         <Select
           options={countries}
           defaultValue={countries[3]}
@@ -64,6 +73,7 @@ const NavBar = () => {
           instanceId="country-select"
         />
       </div>
+      <HamburgerIcon className="absolute w-6 right-7" onClick={handleToggle} />
     </div>
   );
 };
