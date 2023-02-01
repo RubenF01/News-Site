@@ -9,11 +9,12 @@ const NotFound = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="flex items-center justify-center min-h-[80vh] px-16 pt-14 gap-x-10"
+      exit={{ opacity: 0 }}
+      className="flex flex-col 2xl:flex-row items-center justify-center min-h-[80vh] px-16 pt-14 gap-x-10"
     >
       <div className="flex flex-col items-center justify-center leading-none">
-        <h1 className="font-bold text-[300px]">404</h1>
-        <h2 className="pb-4 text-4xl">
+        <h1 className="font-bold text-[150px] 2xl:text-[300px]">404</h1>
+        <h2 className="pb-4 text-xl text-center 2xl:text-left 2xl:text-4xl">
           No articles were found in this category!
         </h2>
         <Link href="/">
@@ -22,8 +23,8 @@ const NotFound = () => {
           </button>
         </Link>
       </div>
-      <div>
-        <Image src={Clumsy} alt="404 image" className="w-[700px]" />
+      <div className="order-first 2xl:order-last">
+        <Image src={Clumsy} alt="404 image" className="2xl:w-[700px]" />
       </div>
     </motion.div>
   );
