@@ -55,13 +55,16 @@ const HamburgerMenu = ({ setIsOpen }: Props) => {
         <AnimatePresence>
           {isVisible && (
             <motion.div
+              onClick={handleClose}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
               exit={{ opacity: 0, transition: { delay: 0 } }}
               key="logo"
             >
-              <Image src={TransparentLogo} alt="logo" className="w-44" />
+              <Link href="/">
+                <Image src={TransparentLogo} alt="logo" className="w-44" />
+              </Link>
             </motion.div>
           )}
 
