@@ -1,9 +1,8 @@
 import type { CategoryQueryResult } from "@/types";
 import { useQuery } from "react-query";
-import { getArticlesByCategory } from "@/api";
+import { getArticlesByCategory } from "@/api-calls";
 import { useContext } from "react";
 import CountryContext from "@/context/countryCountext";
-import { countries } from "@/utils";
 
 export const useCategoryQuery = (category: string): CategoryQueryResult => {
   const { country } = useContext(CountryContext);
