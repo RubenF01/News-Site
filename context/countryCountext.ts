@@ -1,7 +1,8 @@
 import { createContext } from "react";
+import { countries } from "@/utils";
 
 const CountryContext = createContext({
-  country: { label: "Dominican Republic", value: "do" },
+  country: countries[3],
   setCountry: (country: { label: string; value: string }) => {},
 });
 

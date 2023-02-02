@@ -5,18 +5,14 @@ import { Lato } from "@next/font/google";
 import { QueryClient, QueryClientProvider } from "react-query";
 import CountryContext from "@/context/countryCountext";
 import { useState, useMemo } from "react";
+import { countries } from "@/utils";
 
 const lato = Lato({ subsets: ["latin"], weight: ["700", "400", "300", "100"] });
 
 const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [country, setCountry] = useState({
-    label: "Dominican Republic",
-    value: "do",
-  });
-
-  console.log(country);
+  const [country, setCountry] = useState(countries[0]);
 
   const value = useMemo(() => ({ country, setCountry }), [country.value]);
 
