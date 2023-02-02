@@ -19,7 +19,7 @@ const NavBar = ({ setIsOpen }: Props) => {
   const router = useRouter();
   const [currentRoute, setCurrentRoute] = useState<string>();
   const { category } = router.query;
-  const { setCountry } = useContext(CountryContext);
+  const { country, setCountry } = useContext(CountryContext);
 
   useEffect(() => {
     setCurrentRoute(category as string);
@@ -31,7 +31,7 @@ const NavBar = ({ setIsOpen }: Props) => {
       value: string;
     }>
   ) => {
-    selected && setCountry(selected.value);
+    selected && setCountry(selected);
   };
 
   const handleToggle = () => {
@@ -67,7 +67,7 @@ const NavBar = ({ setIsOpen }: Props) => {
       <div className="absolute top-0 bottom-0 hidden my-auto right-10 w-min h-min 2xl:block">
         <Select
           options={countries}
-          defaultValue={countries[3]}
+          defaultValue={country}
           className="right-0 w-48"
           onChange={handleChange}
           instanceId="country-select"

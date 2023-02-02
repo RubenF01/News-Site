@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import useCategoryQuery from "@/hooks/useCategoryQuery";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import ArticleCard from "@/components/ArticleCard";
 import { categories } from "@/utils";
 import NotFound from "@/components/NotFound";
@@ -23,6 +23,7 @@ const CategoryPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
+        exit={{ opacity: 0 }}
         className="min-h-[80vh] px-7 2xl:px-16 pt-14"
       >
         <h1

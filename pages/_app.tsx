@@ -11,9 +11,14 @@ const lato = Lato({ subsets: ["latin"], weight: ["700", "400", "300", "100"] });
 const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [country, setCountry] = useState("do");
+  const [country, setCountry] = useState({
+    label: "Dominican Republic",
+    value: "do",
+  });
 
-  const value = useMemo(() => ({ country, setCountry }), [country]);
+  console.log(country);
+
+  const value = useMemo(() => ({ country, setCountry }), [country.value]);
 
   return (
     <CountryContext.Provider value={value}>

@@ -2,9 +2,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import TransparentLogo from "../public/ASAP NEWS-logos_transparent.png";
 import XMark from "../public/icons/xmark-solid.svg";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { categories } from "@/utils";
 import Link from "next/link";
+import Select, { SingleValue } from "react-select";
+import { countries } from "@/utils";
+import CountryContext from "@/context/countryCountext";
 
 interface Props {
   setIsOpen: (value: boolean) => void;
@@ -12,6 +15,7 @@ interface Props {
 
 const HamburgerMenu = ({ setIsOpen }: Props) => {
   const [isVisible, setIsVisible] = useState(false);
+  const { country, setCountry } = useContext(CountryContext);
 
   const handleClose = () => {
     setIsVisible(false);
@@ -23,6 +27,16 @@ const HamburgerMenu = ({ setIsOpen }: Props) => {
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const handleChange = (
+    selected: SingleValue<{
+      label: string;
+      value: string;
+    }>
+  ) => {
+    selected && setCountry(selected);
+    handleClose();
+  };
 
   return (
     <motion.div
@@ -83,6 +97,26 @@ const HamburgerMenu = ({ setIsOpen }: Props) => {
         </AnimatePresence>
       </div>
       <div className="flex flex-col items-center pt-16 text-4xl capitalize gap-y-7">
+        <AnimatePresence>
+          {isVisible && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.1 }}
+              exit={{ opacity: 0, transition: { delay: 0 } }}
+              className="z-50 pb-4 w-min h-min"
+            >
+              <Select
+                options={countries}
+                defaultValue={country}
+                className="right-0 w-48 text-sm"
+                onChange={handleChange}
+                instanceId="country-select"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         <AnimatePresence>
           {isVisible &&
             categories.map((category, index) => (
