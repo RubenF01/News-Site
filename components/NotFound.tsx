@@ -10,7 +10,7 @@ const NotFound = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
       exit={{ opacity: 0 }}
-      className="flex flex-col 2xl:flex-row items-center justify-center min-h-[80vh] px-16 pt-14 gap-x-10"
+      className="flex flex-col 2xl:flex-row items-center justify-center min-h-[80vh] px-16 pt-14 gap-x-10 sm:pb-10 lg:pb-0"
     >
       <div className="flex flex-col items-center justify-center leading-none">
         <h1 className="font-bold text-[150px] 2xl:text-[300px]">404</h1>

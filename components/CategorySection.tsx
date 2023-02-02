@@ -24,9 +24,9 @@ const CategorySection = ({ category, index, categoryArray }: Props) => {
       viewport={{ once: true }}
       className={`${!data?.results.length && "hidden"}`}
     >
-      <div className="flex flex-col justify-between pt-5 2xl:flex-row pb-36">
-        <div className="flex justify-between pb-5 2xl:max-w-sm 2xl:pb-0 2xl:justify-start 2xl:flex-col gap-y-4">
-          <h1 className="text-4xl font-bold capitalize cursor-default 2xl:text-7xl">
+      <div className="flex flex-col justify-between pt-5 lg:flex-row pb-36">
+        <div className="flex justify-between pb-5 lg:max-w-sm lg:pb-0 lg:justify-start lg:flex-col gap-y-4">
+          <h1 className="text-4xl font-bold capitalize cursor-default lg:text-5xl 2xl:text-7xl">
             {category.label}
           </h1>
           <Link
@@ -36,10 +36,12 @@ const CategorySection = ({ category, index, categoryArray }: Props) => {
             see all <LinkIcon className="w-3" />
           </Link>
         </div>
-        <div className="flex flex-col 2xl:flex-row gap-x-8 gap-y-5 2xl:gap-y-0">
-          <div className="2xl:max-w-[280px] flex flex-col gap-y-3 2xl:gap-y-0 justify-between">
-            <h1 className="text-xl font-bold">{mainArticle?.title}</h1>
-            <p className="text-lg font-light">
+        <div className="flex flex-col lg:flex-row gap-x-8 lg:gap-x-2 2xl:gap-x-8 gap-y-5 lg:gap-y-0">
+          <div className="lg:max-w-[280px] flex flex-col gap-y-3 lg:gap-y-0 justify-between">
+            <h1 className="text-xl font-bold lg:text-lg 2xl:text-xl">
+              {mainArticle?.title}
+            </h1>
+            <p className="text-lg font-light lg:text-base 2xl:text-lg">
               {truncateString(mainArticle?.description, "short")}
             </p>
             <Link
@@ -57,7 +59,7 @@ const CategorySection = ({ category, index, categoryArray }: Props) => {
                 : randomImgSrc()
             }
             alt="image"
-            className="object-cover rounded-lg border-[1px] border-black h-64 w-96 order-first 2xl:order-last"
+            className="object-cover rounded-lg border-[1px] border-black h-64 w-96 sm:w-full sm:h-96 lg:w-80 lg:h-64 2xl:h-80 2xl:w-[450px] order-first lg:order-last"
           />
         </div>
       </div>

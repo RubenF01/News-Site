@@ -1,4 +1,3 @@
-import SearchIcon from "../../public/icons/magnifying-glass-solid.svg";
 import Image from "next/image";
 import TransparentLogo from "../../public/ASAP NEWS-logos_transparent.png";
 import Link from "next/link";
@@ -40,9 +39,8 @@ const NavBar = ({ setIsOpen }: Props) => {
 
   return (
     <div className="relative flex items-center justify-center py-3 bg-butterIcing">
-      <SearchIcon className="absolute top-0 bottom-0 hidden w-5 pt-2 my-auto left-10 2xl:block" />
       <div className="flex items-center gap-x-5">
-        <nav className="hidden uppercase 2xl:flex gap-x-5">
+        <nav className="hidden uppercase lg:flex gap-x-5">
           {categories.slice(0, 3).map((category, index) => (
             <NavBarItem
               category={category}
@@ -54,7 +52,7 @@ const NavBar = ({ setIsOpen }: Props) => {
         <Link href="/">
           <Image src={TransparentLogo} alt="logo" className="w-44" />
         </Link>
-        <nav className="hidden uppercase 2xl:flex gap-x-5">
+        <nav className="hidden uppercase lg:flex gap-x-5">
           {categories.slice(3).map((category, index) => (
             <NavBarItem
               category={category}
@@ -64,7 +62,7 @@ const NavBar = ({ setIsOpen }: Props) => {
           ))}
         </nav>
       </div>
-      <div className="absolute top-0 bottom-0 hidden my-auto right-10 w-min h-min 2xl:block">
+      <div className="absolute top-0 bottom-0 hidden my-auto lg:right-4 2xl:right-10 w-min h-min lg:block">
         <Select
           options={countries}
           defaultValue={country}
@@ -74,7 +72,7 @@ const NavBar = ({ setIsOpen }: Props) => {
         />
       </div>
       <HamburgerIcon
-        className="absolute w-6 right-7 2xl:hidden"
+        className="absolute w-6 right-7 lg:hidden"
         onClick={handleToggle}
       />
     </div>
