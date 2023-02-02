@@ -45,48 +45,50 @@ const HamburgerMenu = ({ setIsOpen }: Props) => {
         opacity: 0,
         borderBottomLeftRadius: "80%",
         borderBottomRightRadius: "80%",
+        transition: { delay: 0 },
       }}
       transition={{ duration: 0.5 }}
       key="hamburger-menu"
       className="fixed inset-0 bg-butterIcing"
     >
       <div className="relative flex justify-center py-3">
-        {isVisible && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            exit={{ opacity: 0 }}
-            key="logo"
-          >
-            <Image src={TransparentLogo} alt="logo" className="w-44" />
-          </motion.div>
-        )}
+        <AnimatePresence>
+          {isVisible && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              exit={{ opacity: 0, transition: { delay: 0 } }}
+              key="logo"
+            >
+              <Image src={TransparentLogo} alt="logo" className="w-44" />
+            </motion.div>
+          )}
 
-        {isVisible && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            exit={{ opacity: 0 }}
-            key="close-button"
-            className="absolute top-0 bottom-0 w-4 my-auto right-7 h-min"
-          >
-            <XMark className="fill-red-500" onClick={handleClose} />
-          </motion.div>
-        )}
+          {isVisible && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              exit={{ opacity: 0, transition: { delay: 0 } }}
+              key="close-button"
+              className="absolute top-0 bottom-0 w-4 my-auto right-7 h-min"
+            >
+              <XMark className="fill-red-500" onClick={handleClose} />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
       <div className="flex flex-col items-center pt-16 text-4xl capitalize gap-y-7">
         <AnimatePresence>
           {isVisible &&
             categories.map((category, index) => (
               <motion.div
+                onClick={() => setIsOpen(false)}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={
-                  isVisible ? { delay: index * 0.2 } : { delay: 0, duration: 0 }
-                }
-                exit={{ opacity: 0 }}
+                transition={{ delay: index * 0.2 }}
+                exit={{ opacity: 0, transition: { delay: 0 } }}
                 key={index}
               >
                 <Link href={`/category/${category.label}`}>
