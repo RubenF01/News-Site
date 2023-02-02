@@ -14,8 +14,8 @@ interface Props {
 const ArticleCard = ({ article, index, articleArr }: Props) => {
   return (
     <div>
-      <div className="flex pt-5 gap-x-4 pb-36">
-        <div className="flex-shrink-0 h-64 w-96">
+      <div className="flex flex-col pt-5 2xl:flex-row gap-x-4 pb-36">
+        <div className="w-full h-64 2xl:h-64 2xl:flex-shrink-0 2xl:w-96">
           <img
             src={
               article && article?.image_url

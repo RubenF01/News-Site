@@ -12,6 +12,10 @@ const CategoryPage = () => {
 
   const articles = data?.results;
 
+  const categoryColor = categories.find(
+    (category) => category.label === categoryName
+  )?.color;
+
   if (!articles?.length) return <NotFound />;
   else {
     return (
@@ -19,16 +23,11 @@ const CategoryPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
-        className="min-h-[80vh] px-16 pt-14"
+        className="min-h-[80vh] px-7 2xl:px-16 pt-14"
       >
         <h1
-          className="font-bold capitalize cursor-default text-7xl"
-          style={{
-            color: `${
-              categories.find((category) => category.label === categoryName)
-                ?.color
-            }`,
-          }}
+          className="text-4xl font-bold capitalize cursor-default 2xl:text-7xl"
+          style={{ color: categoryColor }}
         >
           {categoryName}
         </h1>
