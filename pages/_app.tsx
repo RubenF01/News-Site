@@ -12,7 +12,7 @@ const lato = Lato({ subsets: ["latin"], weight: ["700", "400", "300", "100"] });
 const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [country, setCountry] = useState(countries[0]);
+  const [country, setCountry] = useState(countries[3]);
 
   const value = useMemo(() => ({ country, setCountry }), [country.value]);
 
