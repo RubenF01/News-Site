@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import type { Article } from "@/types";
 import { randomImgSrc } from "@/utils";
 import Separator from "@/components/Separator";

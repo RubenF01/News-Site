@@ -35,6 +35,7 @@ const Footer = () => {
           <ul className="flex flex-col items-center pb-5 2xl:pb-0 2xl:items-start gap-y-2 2xl:gap-y-0">
             {categories.map((category, index) => (
               <Link
+                rel="noreferrer"
                 href={`/category/${category.label}`}
                 key={index}
                 className="capitalize cursor-pointer"

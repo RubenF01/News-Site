@@ -14,7 +14,7 @@ const queryClient = new QueryClient();
 export default function App({ Component, pageProps }: AppProps) {
   const [country, setCountry] = useState(countries[3]);
 
-  const value = useMemo(() => ({ country, setCountry }), [country.value]);
+  const value = useMemo(() => ({ country, setCountry }), [country]);
 
   return (
     <CountryContext.Provider value={value}>

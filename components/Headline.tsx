@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import type { Article } from "@/types";
 import Dot from "../public/icons/circle-solid.svg";
 import { formatDate, randomImgSrc } from "@/utils";

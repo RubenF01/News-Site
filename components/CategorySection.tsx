@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Separator from "./Separator";
 import Link from "next/link";
 import LinkIcon from "../public/icons/link-icon.svg";
