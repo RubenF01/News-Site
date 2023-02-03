@@ -47,7 +47,7 @@ const Footer = () => {
         <p className="absolute flex text-white bottom-2 gap-x-1 2xl:static 2xl:pt-5">
           Created with <Heart className="w-4 fill-red-500" /> by{" "}
           <Link
-            rel="noreferrer"
+            rel="noreferrer noopener"
             href="https://rubenfrias.com/"
             target="_blank"
             className="block"
