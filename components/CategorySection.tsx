@@ -47,7 +47,6 @@ const CategorySection = ({ category, index, categoryArray }: Props) => {
             </p>
             <Link
               href={mainArticle?.link || "#"}
-              target="_blank"
               className="flex text-sm font-medium uppercase w-min gap-x-2 whitespace-nowrap"
             >
               read article <LinkIcon className="w-3" />

@@ -18,9 +18,7 @@ const Footer = () => {
             ASAP News provides innovative and essential investigative
             journalism, opinions, and analysis from some of the major news
             sources. Articles provided by{" "}
-            <a href="https://newsdata.io/" target="_blank">
-              NEWSDATA.IO
-            </a>
+            <a href="https://newsdata.io/">NEWSDATA.IO</a>
           </p>
         </div>
         <p className="text-center 2xl:text-left">

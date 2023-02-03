@@ -42,7 +42,7 @@ const Headline = ({ headlineArticle }: Props) => {
           </div>
         </div>
         <div className="flex flex-col gap-y-4">
-          <Link href={headlineArticle?.link || "#"} target="_blank">
+          <Link href={headlineArticle?.link || "#"}>
             <h1 className="max-w-3xl text-4xl cursor-pointer">
               {headlineArticle?.title}
             </h1>

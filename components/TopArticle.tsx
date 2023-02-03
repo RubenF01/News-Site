@@ -21,7 +21,7 @@ const TopArticle = ({ article }: Props) => {
           <p>{article?.category[0]}</p>
         </div>
       )}
-      <Link href={article?.link || "#"} target="_blank">
+      <Link href={article?.link || "#"}>
         <h1 className="text-xl font-bold">{article?.title}</h1>
       </Link>
       <p className="font-light">

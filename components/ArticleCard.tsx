@@ -33,7 +33,7 @@ const ArticleCard = ({ article, index, articleArr }: Props) => {
             <Dot className="w-1" />
             <p>{formatDate(article?.pubDate)}</p>
           </div>
-          <Link href={article?.link} target="_blank">
+          <Link href={article?.link}>
             <h1 className="pt-2 text-2xl font-bold">{article?.title}</h1>
           </Link>
           <p>{article?.description}</p>
