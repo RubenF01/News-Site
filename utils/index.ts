@@ -1,6 +1,7 @@
 import { format } from "date-fns";
+import type { Category } from "@/types";
 
-export const categories = [
+export const categories: Category[] = [
   { label: "business", color: "#607D8B" },
   { label: "entertainment", color: "##F44336" },
   { label: "politics", color: "#3F51B5" },

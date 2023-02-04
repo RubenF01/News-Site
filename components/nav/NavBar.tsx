@@ -9,6 +9,7 @@ import Select, { SingleValue } from "react-select";
 import { countries } from "@/utils";
 import CountryContext from "@/context/countryCountext";
 import HamburgerIcon from "../../public/icons/bars-solid.svg";
+import type { CategoryOption } from "@/types";
 
 interface Props {
   setIsOpen: (value: boolean) => void;
@@ -26,7 +27,7 @@ const NavBar = ({ setIsOpen }: Props) => {
 
   const handleChange = (
     selected: SingleValue<{
-      label: string;
+      label: CategoryOption | string;
       value: string;
     }>
   ) => {
