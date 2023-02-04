@@ -14,7 +14,7 @@ export interface CategoryQueryResult {
 }
 
 export interface Category {
-  label: string;
+  label: CategoryOption;
   color: string;
 }
 
