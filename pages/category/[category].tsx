@@ -4,11 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import ArticleCard from "@/components/ArticleCard";
 import { categories } from "@/utils";
 import NotFound from "@/components/NotFound";
+import type { CategoryOption } from "@/types";
 
 const CategoryPage = () => {
   const router = useRouter();
   const { category: categoryName } = router.query;
-  const { data } = useCategoryQuery(categoryName as string);
+  const { data } = useCategoryQuery(categoryName as CategoryOption);
 
   const articles = data?.results;
 
