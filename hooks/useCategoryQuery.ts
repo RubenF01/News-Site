@@ -1,10 +1,12 @@
-import type { CategoryQueryResult } from "@/types";
+import type { CategoryQueryResult, CategoryOption } from "@/types";
 import { useQuery } from "react-query";
 import { getArticlesByCategory } from "@/api-calls";
 import { useContext } from "react";
 import CountryContext from "@/context/countryCountext";
 
-export const useCategoryQuery = (category: string): CategoryQueryResult => {
+export const useCategoryQuery = (
+  category: CategoryOption
+): CategoryQueryResult => {
   const { country } = useContext(CountryContext);
 
   const { data, status } = useQuery(

@@ -17,3 +17,12 @@ export interface Category {
   label: string;
   color: string;
 }
+
+export type CategoryOption =
+  | "top"
+  | "business"
+  | "entertainment"
+  | "politics"
+  | "science"
+  | "technology"
+  | "world";
